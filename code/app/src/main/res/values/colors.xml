@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGreen">#2cb9c3</color>
+    <color name="boyBlue1">#c3e0f3</color>
+    <color name="girlPink1">#ffe1ec</color>
+    <color name="boyBlue2">#66b4d9</color>
+</resources>
