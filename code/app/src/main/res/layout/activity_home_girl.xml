@@ -3,7 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardGirl1"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/pre"
+            android:src="@drawable/left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.5">
+            <ImageView
 
+                android:src="@drawable/day"
+                android:layout_marginTop="15dp"
+                android:background="@color/cardGirl2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:id="@+id/card_day"
+                android:src="@drawable/star5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cardGirl3"
+                android:layout_weight="3" />
+            <ImageView
+                android:id="@+id/back_girl"
+                android:src="@drawable/close"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_marginBottom="15dp"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/next"
+            android:src="@drawable/right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,7 +91,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/card_boy"
+                    android:id="@+id/card_girl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -97,25 +148,28 @@
                             android:id="@+id/time"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:text="xxxx:xx:xx:xx" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical">
+
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/star"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1"
+                            android:src="@drawable/star1" />
+
                         <TextView
-                            android:paddingLeft="30dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="昨天得3Satrs"
-                            android:layout_weight="2"/>
+                            android:layout_weight="2"
+                            android:paddingLeft="30dp"
+                            android:text="昨天得3Satrs" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="0dp"
@@ -246,13 +300,13 @@
         android:layout_margin="5dp"
         android:layout_weight="2">
 
+
         <LinearLayout
             android:id="@+id/inner1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_weight="1">
 
             <LinearLayout
                 android:id="@+id/line11"
@@ -268,63 +322,111 @@
                     android:id="@+id/star11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/star"
+                    android:src="@drawable/star1"
                     android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/line12"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl1">
 
+                <ImageView
+                    android:id="@+id/star12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line13"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl1">
-
+                <ImageView
+                    android:id="@+id/star13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line14"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl1">
-
+                <ImageView
+                    android:id="@+id/star14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line15"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl1">
-
+                <ImageView
+                    android:id="@+id/star15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line16"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl1">
-
+                <ImageView
+                    android:id="@+id/star16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line17"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl1">
-
+                <ImageView
+                    android:id="@+id/star17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -336,60 +438,117 @@
             android:layout_marginBottom="5px"
             android:layout_weight="1">
             <LinearLayout
+                android:id="@+id/line21"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
-
+                <ImageView
+                    android:id="@+id/star21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/line22"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
-
+                <ImageView
+                    android:id="@+id/star22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/line23"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
-
+                <ImageView
+                    android:id="@+id/star23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/line24"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
-
+                <ImageView
+                    android:id="@+id/star24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/line25"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
-
+                <ImageView
+                    android:id="@+id/star25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/line26"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
+                <ImageView
+                    android:id="@+id/star26"
 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/line27"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl2">
-
+                <ImageView
+                    android:id="@+id/star27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -403,77 +562,214 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/line31"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line32"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line33"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line34"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line35"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line36"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/line37"
+                android:onClick="star"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:orientation="vertical"
                 android:background="@drawable/card_girl3">
-
+                <ImageView
+                    android:id="@+id/star37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star1"
+                    android:visibility="gone"/>
             </LinearLayout>
         </LinearLayout>
 
-
-        <ImageView
-            android:src="@drawable/card_day"
-            android:layout_marginHorizontal="50dp"
-            android:id="@+id/card_show"
+        <LinearLayout
+            android:id="@+id/award"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"/>
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1"
+                android:text="奖品列表"
+                android:gravity="center"
+                android:textSize="40dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s1"
+                    android:layout_margin="20dp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s2"
+                    android:layout_margin="20dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s3"
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s4"
+                    android:layout_margin="20dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s5"
+                    android:layout_margin="20dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s6"
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s7"
+                    android:layout_margin="20dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s8"
+                    android:layout_margin="20dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/s9"
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
 
 
     </LinearLayout>

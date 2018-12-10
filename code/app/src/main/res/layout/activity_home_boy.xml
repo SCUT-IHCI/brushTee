@@ -108,7 +108,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/star"
+                    android:src="@drawable/star1"
                     android:layout_weight="1"/>
                 <TextView
                     android:paddingLeft="30dp"
@@ -268,7 +268,7 @@
                     android:id="@+id/star11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/star"
+                    android:src="@drawable/star1"
                     android:visibility="gone"/>
             </LinearLayout>
 

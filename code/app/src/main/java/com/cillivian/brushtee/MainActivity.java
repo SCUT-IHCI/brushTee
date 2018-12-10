@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,11 +17,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String username ;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initUI();
+
     }
 
     private void initUI() {
@@ -52,7 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.login_girl:
                 intent.setClass(getApplicationContext(),HomeGirlActivity.class);
                 break;
+
         }
+
         this.startActivity(intent);
     }
+
 }
