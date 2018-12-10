@@ -6,5 +6,12 @@
     <color name="colorGreen">#2cb9c3</color>
     <color name="boyBlue1">#c3e0f3</color>
     <color name="girlPink1">#ffe1ec</color>
-    <color name="boyBlue2">#66b4d9</color>
-</resources>
+    <color name="boyBlue2">#66b4d9</color>　
+    <color name="cardBoy1">#4ee2b7</color>
+    <color name="cardBoy2">#66d3f9</color>
+    <color name="cardBoy3">#40b6dd</color>　
+    <color name="cardGirl1">#f9e9ef</color>
+    <color name="cardGirl2">#f2cbda</color>
+    <color name="cardGirl3">#e688a8</color>　
+
+    </resources>
