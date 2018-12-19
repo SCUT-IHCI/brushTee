@@ -20,8 +20,11 @@ public class girlMainView extends LinearLayout {
    *@Description:设置跳转路由
    */
     public void setListeners(OnClickListener onClickListener){
+        //奖励页面
         ((ImageView)findViewById(R.id.reward)).setOnClickListener(onClickListener);
+        //切换用户
         ((ImageButton)findViewById(R.id.head_girl)).setOnClickListener(onClickListener);
+        //打卡
         ((ImageButton)findViewById(R.id.Fri_first)).setOnClickListener(onClickListener);
         ((ImageButton)findViewById(R.id.Fri_second)).setOnClickListener(onClickListener);
         ((ImageButton)findViewById(R.id.Fri_third)).setOnClickListener(onClickListener);

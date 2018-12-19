@@ -48,12 +48,12 @@ public class girlMainController implements View.OnClickListener {
                 break;
             case R.id.Mon_first:
                 case R.id.Mon_second:
-                    case R.id.Tue_third:
+                    case R.id.Mon_third:
                 listener.onCard(v.getId());
                 break;
             case R.id.Tue_first:
                 case R.id.Tue_second:
-                    case R.id.Mon_third:
+                    case R.id.Tue_third:
                 listener.onCard(v.getId());
                 break;
             case R.id.Wed_first:

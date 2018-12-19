@@ -14,7 +14,10 @@ import com.cillivian.brushtee.R;
  */
 public class reward {
 private ImageView reward=null;
-
+private int[]images;
+public reward(){
+    images=new int[]{1,2,3,4,5,6,7,8,9};
+}
     public ImageView getReward() {
         return reward;
     }

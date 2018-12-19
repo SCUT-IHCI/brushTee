@@ -4,7 +4,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/boy_exchange"
-    android:background="#60000000">
+    android:background="#60000000"
+  >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="5dp"
-                android:background="#88D4F6"
+                android:background="@color/cardBoy2"
                 android:src="@drawable/button_boy" />
 
             <ImageButton
@@ -34,7 +35,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="230dp"
                 android:layout_marginTop="3dp"
-                android:background="#88D4F6"
+                android:background="@color/cardBoy2"
                 android:src="@drawable/close" />
         </LinearLayout>
 
@@ -82,11 +83,11 @@
                 android:src="@drawable/coin_boy" />
 
             <TextView
-                android:id="@+id/coin_number_mask"
+                android:id="@+id/coin_boy_get"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="890"
+                android:text="22"
                 android:textColor="#F8F8FF"
                 android:textSize="23dp" />
 
@@ -95,7 +96,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="#49A9E0"
+            android:background="@color/cardBoy3"
             android:clipChildren="false"
             android:orientation="vertical">
 
@@ -105,7 +106,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:background="#49A9E0"
+                android:background="@color/cardBoy3"
                 android:scaleType="fitXY"
                 android:src="@drawable/girl"
 

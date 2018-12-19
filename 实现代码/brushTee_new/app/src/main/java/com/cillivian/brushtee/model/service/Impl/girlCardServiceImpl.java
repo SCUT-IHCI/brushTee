@@ -3,11 +3,12 @@ package com.cillivian.brushtee.model.service.Impl;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cillivian.brushtee.R;
-import com.cillivian.brushtee.controller.MainActivityController;
+import com.cillivian.brushtee.MainActivity;
 import com.cillivian.brushtee.controller.girlCardController;
-import com.cillivian.brushtee.model.service.girlCardService;
 import com.cillivian.brushtee.view.girlCardView;
 /**
  * Time:2018/12/08 1105
@@ -19,24 +20,52 @@ import com.cillivian.brushtee.view.girlCardView;
 
 public class girlCardServiceImpl extends Activity implements com.cillivian.brushtee.model.service.girlCardService {
 
-    MainActivityController mainActivityController =MainActivityController.getInstance();
+    private String rand;
+    private TextView textView;
+    private int num;
+    private int[]images;
+    private int index;
+    private ImageButton imageButton;
+    MainActivity mainActivity =MainActivity.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//        Intent intent=getIntent();
+//       Bundle bundle =intent.getExtras();
+//       rand=bundle.toString();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.girl_card);
-        mainActivityController.addActivity(this);
+        mainActivity.addActivity(this);
         girlCardController onCardController=new girlCardController((girlCardView) this.findViewById(R.id.card_girl),this);
         ((girlCardView)this.findViewById(R.id.card_girl)).setListeners(onCardController);
-    }/**
+        initData();
+    }
+    public void initData(){
+        images=new int[]{R.drawable.sun,R.drawable.moon,R.drawable.s1,R.drawable.s2};
+        imageButton=findViewById(R.id.card);
+        imageButton.setImageResource(images[0]);
+        num =images.length;
+        index = 0;
+    }
+    public void updateImage(){
+        imageButton.setImageResource(images[index]);
+    }
+    /**
     *@Date: 2018/12/10 0018
     *@Author:Cillivian
     *@Description:定义左跳转
     */
-    public void leftSlide() {
-        ((ImageButton)findViewById(R.id.left_arrow_girl)).setImageResource(R.drawable.disppear_girl);
-        ((ImageButton)findViewById(R.id.right_arrow_girl)).setImageResource(R.drawable.right_arrow_girl);
-        ((ImageButton)findViewById(R.id.card)).setImageResource(R.drawable.sun);
+    public void pre() {
+        if(index==num-1)
+        {
+            index=0;
+        }
+        else{
+            index++;
+        }
+        updateImage();
     }
+
 
 
 
@@ -46,17 +75,25 @@ public class girlCardServiceImpl extends Activity implements com.cillivian.brush
      *@Description:定义右跳转
      */
     @Override
-    public void rightSlide() {
-        ((ImageButton)findViewById(R.id.right_arrow_girl)).setImageResource(R.drawable.disppear_girl);
-        ((ImageButton)findViewById(R.id.left_arrow_girl)).setImageResource(R.drawable.left_arrow_girl);
-        ((ImageButton)findViewById(R.id.card)).setImageResource(R.drawable.moon);
-    }/**
+    public void next() {
+        if(index==0)
+        {
+            index=num-1;
+        }else {
+            index--;
+        }
+        updateImage();
+
+    }
+    /**
      *@Date: 2018/12/10 0018
      *@Author:Cillivian
      *@Description:定义关闭
      */
     @Override
     public void cardClose() {
+
         finish();
+        Toast.makeText(getApplicationContext(),"打卡成功!",Toast.LENGTH_LONG).show();//提示语
     }
 }

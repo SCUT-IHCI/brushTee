@@ -1,5 +1,5 @@
 package com.cillivian.brushtee.model.service.Impl;
-
+import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.cillivian.brushtee.model.entity.reward;
 import com.cillivian.brushtee.R;
-import com.cillivian.brushtee.controller.MainActivityController;
+import com.cillivian.brushtee.MainActivity;
 import com.cillivian.brushtee.controller.girlMainController;
 import com.cillivian.brushtee.model.entity.mainData;
 import com.cillivian.brushtee.view.girlMainView;
@@ -23,7 +23,7 @@ import com.cillivian.brushtee.model.service.girlMainService;
  */
 public class girlMainServiceImpl extends Activity implements girlMainService {
 
-    MainActivityController mainActivityController =MainActivityController.getInstance();
+    MainActivity mainActivity =MainActivity.getInstance();
     mainData Data=mainData.getInstance();
     LinearLayout rewardBoard;
     reward reward;
@@ -41,22 +41,28 @@ public class girlMainServiceImpl extends Activity implements girlMainService {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.girl_main);
-        mainActivityController.addActivity(this);
+        mainActivity.addActivity(this);
         ((TextView)findViewById(R.id.coin_number_girl)).setText(String.valueOf(Data.getCoin_numbers()));
         ((TextView)findViewById(R.id.time_girl)).setText(String.valueOf(Data.getTime()));
-        setStar();
+        Toast.makeText(getApplicationContext(),"欢迎您，小公主!",Toast.LENGTH_LONG).show();//欢迎语
+        /**
+         *@Date: 2018/12/10 0019
+         *@Author:Cillivian
+         *@Description:
+         */
+        starShow();
         girlMainController controller=new girlMainController((girlMainView) this.findViewById(R.id.girl),this);
         ((girlMainView)this.findViewById(R.id.girl)).setListeners(controller);
     }
     public void exchange(){
         String data=String.valueOf(Data.getCoin_numbers());
         Intent intent = new Intent(girlMainServiceImpl.this,girlExchangeServiceImpl.class);
-        intent.putExtra("extra_data",data);
+        intent.putExtra("data",data);
         this.startActivity(intent);
     }
     @Override
     public void onBackPressed() {
-        mainActivityController.finishAll();
+        mainActivity.close();
     }
 
     /**
@@ -65,86 +71,86 @@ public class girlMainServiceImpl extends Activity implements girlMainService {
      *@Description:打卡函数实现
      */
     public void onCard(int buttonID){
-        int place=21;
+        int coordinate=21;
         switch (buttonID){
             case R.id.Fri_first:
-                place=0;
+                coordinate=0;
                 break;
             case R.id.Fri_second:
-                place=7;
+                coordinate=7;
                 break;
             case R.id.Fri_third:
-                place=14;
+                coordinate=14;
                 break;
             case R.id.Sat_first:
-                place=1;
+                coordinate=1;
                 break;
             case R.id.Sat_second:
-                place=8;
+                coordinate=8;
                 break;
             case R.id.Sat_third:
-                place=15;
+                coordinate=15;
                 break;
             case R.id.Sun_first:
-                place=2;
+                coordinate=2;
                 break;
             case R.id.Sun_second:
-                place=9;
+                coordinate=9;
                 break;
             case R.id.Sun_third:
-                place=16;
+                coordinate=16;
                 break;
             case R.id.Mon_first:
-                place=3;
+                coordinate=3;
                 break;
             case R.id.Mon_second:
-                place=10;
+                coordinate=10;
                 break;
             case R.id.Mon_third:
-                place=17;
+                coordinate=17;
                 break;
             case R.id.Tue_first:
-                place=4;
+                coordinate=4;
                 break;
             case R.id.Tue_second:
-                place=11;
+                coordinate=11;
                 break;
             case R.id.Tue_third:
-                place=18;
+                coordinate=18;
                 break;
             case R.id.Wed_first:
-                place=5;
+                coordinate=5;
                 break;
             case R.id.Wed_second:
-                place=12;
+                coordinate=12;
                 break;
             case R.id.Wed_third:
-                place=19;
+                coordinate=19;
                 break;
             case R.id.Thurs_first:
-                place=6;
+                coordinate=6;
                 break;
             case R.id.Thurs_second:
-                place=13;
+                coordinate=13;
                 break;
             case R.id.Thurs_third:
-                place=20;
+                coordinate=20;
                 break;
         }
-        if(Data.getCard_record()[place]==1||place==21)
+        if(Data.getCard_record()[coordinate]==1||coordinate==21)
             return;
         else{
             Intent intent = new Intent(girlMainServiceImpl.this,girlCardServiceImpl.class);
             this.startActivity(intent);
-            Data.setCard_recordOne(place);
+            Data.setOneCard(coordinate);
             ((ImageButton)findViewById(buttonID)).setImageResource(R.drawable.star);
-            Data.setAddNumbers();
+            Data.setSum();
             Data.addCoins();
             ((TextView)findViewById(R.id.coin_number_girl)).setText(String.valueOf(Data.getCoin_numbers()));
         }
     }
 
-    public void setStar(){
+    public void starShow(){
         for(int i=0;i<21;++i)
         {
             if(Data.getCard_record()[i]==1)

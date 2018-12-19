@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cillivian.brushtee.R;
-import com.cillivian.brushtee.controller.MainActivityController;
+import com.cillivian.brushtee.MainActivity;
 import com.cillivian.brushtee.controller.boyMainController;
 import com.cillivian.brushtee.model.entity.reward;
 import com.cillivian.brushtee.model.service.boyMainService;
@@ -27,7 +28,7 @@ import com.cillivian.brushtee.model.entity.updateTime;
 public class boyMainServiceImpl extends Activity implements boyMainService {
 
     mainData Data=mainData.getInstance();
-    MainActivityController mainActivityController =MainActivityController.getInstance();
+    MainActivity mainActivity =MainActivity.getInstance();
     private int rand;
     private updateTime updateTime;
     /**
@@ -65,11 +66,17 @@ LinearLayout rewardBoard;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.boy_main);
-        mainActivityController.addActivity(this);
+        mainActivity.addActivity(this);
         ((TextView)findViewById(R.id.coin_number_boy)).setText(String.valueOf(Data.getCoin_numbers()));
         ((TextView)findViewById(R.id.time_boy)).setText(String.valueOf(Data.getTime()));
-
-        setStar();
+        Toast.makeText(getApplicationContext(),"欢迎您，小王子!",Toast.LENGTH_LONG).show();//欢迎语
+        /**
+        *@Date: 2018/12/10 0019
+        *@Author:Cillivian
+        *@Description:
+        */
+        starShow();
+        
         boyMainController boyMainControllerInstance =new boyMainController((boyMainView)this.findViewById(R.id.boy),this);
         ((boyMainView)this.findViewById(R.id.boy)).setListeners(boyMainControllerInstance);
 
@@ -79,14 +86,14 @@ LinearLayout rewardBoard;
 
     public void exchange(){
         String data=String.valueOf(Data.getCoin_numbers());
-        Intent intent = new Intent(boyMainServiceImpl.this,boyExcahngeServiceImpl.class);
-        intent.putExtra("extra_data",data);
+        Intent intent = new Intent(boyMainServiceImpl.this,boyExchangeServiceImpl.class);
+        intent.putExtra("data",data);
         this.startActivity(intent);
     }
 
     @Override
     public void onBackPressed() {
-        mainActivityController.finishAll();
+        mainActivity.close();
     }
 /**
 *@Date: 2018/12/10 0018
@@ -95,82 +102,82 @@ LinearLayout rewardBoard;
 */
     public void onCard(int buttonID){
         rand=Data.getRandNumber();
-        int place=21;
+        int coordinate=21;
         switch (buttonID){
             case R.id.Fri_first:
-                place=0;
+                coordinate=0;
                 break;
             case R.id.Fri_second:
-                place=7;
+                coordinate=7;
                 break;
             case R.id.Fri_third:
-                place=14;
+                coordinate=14;
                 break;
             case R.id.Sat_first:
-                place=1;
+                coordinate=1;
                 break;
             case R.id.Sat_second:
-                place=8;
+                coordinate=8;
                 break;
             case R.id.Sat_third:
-                place=15;
+                coordinate=15;
                 break;
             case R.id.Sun_first:
-                place=2;
+                coordinate=2;
                 break;
             case R.id.Sun_second:
-                place=9;
+                coordinate=9;
                 break;
             case R.id.Sun_third:
-                place=16;
+                coordinate=16;
                 break;
             case R.id.Mon_first:
-                place=3;
+                coordinate=3;
                 break;
             case R.id.Mon_second:
-                place=10;
+                coordinate=10;
                 break;
             case R.id.Mon_third:
-                place=17;
+                coordinate=17;
                 break;
             case R.id.Tue_first:
-                place=4;
+                coordinate=4;
                 break;
             case R.id.Tue_second:
-                place=11;
+                coordinate=11;
                 break;
             case R.id.Tue_third:
-                place=18;
+                coordinate=18;
                 break;
             case R.id.Wed_first:
-                place=5;
+                coordinate=5;
                 break;
             case R.id.Wed_second:
-                place=12;
+                coordinate=12;
                 break;
             case R.id.Wed_third:
-                place=19;
+                coordinate=19;
                 break;
             case R.id.Thurs_first:
-                place=6;
+                coordinate=6;
                 break;
             case R.id.Thurs_second:
-                place=13;
+                coordinate=13;
                 break;
             case R.id.Thurs_third:
-                place=20;
+                coordinate=20;
                 break;
         }
-        if(Data.getCard_record()[place]==1||place==21)
-            return;
+        if(Data.getCard_record()[coordinate]==1||coordinate==21)
+            return;//控制打卡禁止
         else{
             Intent intent = new Intent(boyMainServiceImpl.this,boyCardServiceImpl.class);
             this.startActivity(intent);
             //传输打卡信息
             intent.putExtra("rand",rand);
-            Data.setCard_recordOne(place);
+            Data.setOneCard(coordinate);
             ((ImageButton)findViewById(buttonID)).setImageResource(R.drawable.star);
-            Data.setAddNumbers();
+            Data.setSum();
             Data.addCoins();
             ((TextView)findViewById(R.id.coin_number_boy)).setText(String.valueOf(Data.getCoin_numbers()));
         }
@@ -181,7 +188,7 @@ LinearLayout rewardBoard;
 *@Author:Cillivian
 *@Description:星星显示
 */
-    public void setStar(){
+    public void starShow(){
         for(int i=0;i<21;++i)
         {
             if(Data.getCard_record()[i]==1)

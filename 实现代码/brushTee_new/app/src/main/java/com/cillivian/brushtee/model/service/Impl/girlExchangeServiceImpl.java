@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.cillivian.brushtee.R;
-import com.cillivian.brushtee.controller.MainActivityController;
+import com.cillivian.brushtee.MainActivity;
 import com.cillivian.brushtee.controller.girlExchangeController;
 import com.cillivian.brushtee.model.service.girlExchangeService;
 import com.cillivian.brushtee.view.girlExchangeView;
@@ -20,15 +20,15 @@ import com.cillivian.brushtee.view.girlExchangeView;
  */
 public class girlExchangeServiceImpl extends Activity implements girlExchangeService {
 
-    MainActivityController mainActivityController =MainActivityController.getInstance();
+    MainActivity mainActivity =MainActivity.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.girl_exchange);
-        mainActivityController.addActivity(this);
+        mainActivity.addActivity(this);
         Intent intent=getIntent();
-        String data=intent.getStringExtra("extra_data");
-        ((TextView)findViewById(R.id.coin_number_girl_mask)).setText(data);
+        String data=intent.getStringExtra("data");
+        ((TextView)findViewById(R.id.coin_girl_get)).setText(data);
         girlExchangeController girlChoose=new girlExchangeController((girlExchangeView) this.findViewById(R.id.girl_exchange),this);
         ((girlExchangeView)this.findViewById(R.id.girl_exchange)).setListeners(girlChoose);
     }

@@ -29,8 +29,8 @@ public class boyMainController implements OnClickListener{
 
     }
 
-    public void onClick(View v){
-        switch (v.getId()){
+    public void onClick(View view){
+        switch (view.getId()){
             case R.id.reward:
                 listener1.showReward();
                 break;
@@ -40,38 +40,38 @@ public class boyMainController implements OnClickListener{
             case R.id.Fri_first:
                 case R.id.Fri_second:
                     case R.id.Fri_third:
-                listener1.onCard(v.getId());
+                listener1.onCard(view.getId());
                 break;
             case R.id.Sat_first:
                 case R.id.Sat_second:
                     case R.id.Sat_third:
 
-                listener1.onCard(v.getId());
+                listener1.onCard(view.getId());
                 break;
             case R.id.Sun_first:
                 case R.id.Sun_second:
                     case R.id.Sun_third:
-                listener1.onCard(v.getId());
+                listener1.onCard(view.getId());
                 break;
             case R.id.Mon_first:
                 case R.id.Mon_second:
-                    case R.id.Tue_third:
-                listener1.onCard(v.getId());
+                    case R.id.Mon_third:
+                listener1.onCard(view.getId());
                 break;
             case R.id.Tue_first:
                 case R.id.Tue_second:
-                    case R.id.Mon_third:
-                listener1.onCard(v.getId());
+                    case R.id.Tue_third:
+                listener1.onCard(view.getId());
                 break;
             case R.id.Wed_first:
                 case R.id.Wed_second:
                     case R.id.Wed_third:
-                listener1.onCard(v.getId());
+                listener1.onCard(view.getId());
                 break;
             case R.id.Thurs_first:
                 case R.id.Thurs_second:
                     case R.id.Thurs_third:
-                listener1.onCard(v.getId());
+                listener1.onCard(view.getId());
                 break;
             default:
                 break;

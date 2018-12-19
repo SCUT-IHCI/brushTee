@@ -15,68 +15,64 @@ public class mainData {
     public static mainData getInstance() {
         return ourInstance;
     }
+    private int DAY=21;
+    private Random random;
     private int sum=0;
     private int initData=10;
     private int coin_numbers;
     private int[] card_record;
-    private int addNumbers;
-    private Random random;
+    private int addNum;
     int randNumber;
-   private String update;
  updateTime updateTime;
 
 /**
-*@Date: 2018/12/17 0018
+*@Date: 2018/12/07 0018
 *@Author:Cillivian
 *@Description:设置页面数据
 */
     private mainData() {
         coin_numbers=0;
-        card_record =new int[21];
-        for(int i=0;i<21;++i)
+        card_record =new int[DAY];
+        for(int i=0;i<DAY;++i)
             card_record[i]=0;
-        addNumbers=0;
+       addNum=0;
 
 
     }
-
+/**
+*@Date: 2018/12/10 0019
+*@Author:Cillivian
+*@Description:获取系统当前时间
+*/
     public String getTime(){
 updateTime=new updateTime();
         return this. updateTime.getTime();
     }
 
-    public void setAddNumbers() {
+    public void setSum() {
         int temp=0;
-        for(int i=0;i<21;++i)
+        for(int i=0;i<DAY;++i)
             if(card_record[i]==1)
                ++temp;
-        this.addNumbers = temp;
+        this.addNum = temp;
         random=new Random();
         int  t = random.nextInt(7) +2;//生成随机变量
         this.sum+=t;
         this.randNumber=t;
     }
 
-    public int getAddNumbers() {
-        return addNumbers;
-    }
 
-    public void setCard_recordOne(int place) {
-        card_record[place]=1;
+//记录打卡
+    public void setOneCard(int coordinate) {
+        card_record[coordinate]=1;
+        //记录
     }
     public void addCoins(){
 
-        coin_numbers=initData+this.sum;
+        coin_numbers=initData+this.sum;//叠加获得星星数量
 
     }
 
-    public void setCoin_numbers(int coin_numbers) {
-        this.coin_numbers = coin_numbers;
-    }
-
-    public void setCard_record(int[] card_record) {
-        this.card_record = card_record;
-    }
 
     public  int getRandNumber(){
         return randNumber;

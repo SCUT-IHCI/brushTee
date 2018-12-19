@@ -16,7 +16,7 @@ public class updateTime {
 
     public updateTime(){
         simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm E");//获取当前时间
-        time=simpleDateFormat.format(curDate);
+        time=simpleDateFormat.format(curDate);//格式化时间
 
     }
     public  String getTime(){

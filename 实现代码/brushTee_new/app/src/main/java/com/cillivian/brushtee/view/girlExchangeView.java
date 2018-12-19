@@ -14,6 +14,11 @@ import com.cillivian.brushtee.R;
  * Description:
  */
 public class girlExchangeView extends LinearLayout {
+    /**
+     *@Date: 2018/12/08 0018
+     *@Author:Cillivian
+     *@Description:设置跳转
+     */
     public girlExchangeView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }

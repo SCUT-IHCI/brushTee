@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="280dp">
             <ImageButton
+                android:src="@drawable/left_arrow_boy"
                 android:id="@+id/left_arrow"
                 android:layout_width="25dp"
                 android:layout_height="24dp"

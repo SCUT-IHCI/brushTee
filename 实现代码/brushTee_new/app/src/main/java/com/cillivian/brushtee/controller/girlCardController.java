@@ -23,10 +23,10 @@ public class girlCardController implements View.OnClickListener{
                 listener.cardClose();
                 break;
             case R.id.right_arrow_girl:
-                listener.rightSlide();
+                listener.next();
                 break;
             case R.id.left_arrow_girl:
-                listener.leftSlide();
+                listener.pre();
                 break;
             default:
                 break;

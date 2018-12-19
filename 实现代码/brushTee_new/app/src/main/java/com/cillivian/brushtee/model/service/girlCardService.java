@@ -12,7 +12,7 @@ public interface girlCardService {
      *@Author:Cillivian
      *@Description:设置打卡动作
      */
-    public void rightSlide();
-    public void leftSlide();
+    public void next();
+    public void pre();
     public void cardClose();
 }

@@ -15,12 +15,12 @@ import com.cillivian.brushtee.view.girlExchangeView;
 public class girlExchangeController implements View.OnClickListener{
     private girlExchangeService listener;
     private girlExchangeView girlChooseView;
-    public girlExchangeController(girlExchangeView View1, girlExchangeService listener) {
-        this.girlChooseView = View1;
+    public girlExchangeController(girlExchangeView girlExchangeView, girlExchangeService listener) {
+        this.girlChooseView = girlExchangeView;
         this.listener = listener;
     }
-    public void onClick(View v){
-        switch (v.getId()){
+    public void onClick(View view){
+        switch (view.getId()){
             case R.id.change_head_girl:
                 listener.ExchangeShowTheme();
                 break;
