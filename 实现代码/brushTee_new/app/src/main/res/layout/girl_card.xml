@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cillivian.brushtee.view.girlCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:id="@+id/card_girl"
+    android:background="#80000000">
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="350dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_girl"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp">
+            <ImageButton
+                android:id="@+id/left_arrow_girl"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="127dp"
+                android:layout_marginLeft="0dp"
+                android:background="#F9BBDB"
+                android:scaleType="fitXY"
+               />
+
+            <ImageButton
+                android:id="@+id/card"
+                android:layout_width="159dp"
+                android:layout_height="176dp"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="50dp"
+                android:background="#F9BBDB"
+                android:scaleType="fitXY"
+                android:src="@drawable/sun" />
+
+
+            <ImageButton
+                android:id="@+id/right_arrow_girl"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="127dp"
+                android:layout_marginLeft="20dp"
+                android:background="#F9BBDB"
+                android:scaleType="fitXY"
+                android:src="@drawable/right_arrow_girl" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/bg_card_girl"
+            android:gravity="center_horizontal">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:background="#F67EAB"
+                android:src="@drawable/star"/>
+            <TextView
+                android:id="@+id/card_num"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:layout_marginLeft="12dp"
+                android:textColor="#F8F8FF"
+                android:text="1"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</com.cillivian.brushtee.view.girlCardView>

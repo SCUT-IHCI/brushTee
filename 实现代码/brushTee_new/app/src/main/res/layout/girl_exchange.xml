@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cillivian.brushtee.view.girlExchangeView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#60000000"
+    android:id="@+id/girl_exchange">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:background="#f9bbdd"
+        android:orientation="vertical"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clipChildren="false">
+
+            <ImageButton
+                android:id="@+id/homeButton_boy"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:background="#F9BBDB"
+                android:src="@drawable/button_girl"/>
+
+            <ImageButton
+                android:id="@+id/close_girl"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/close" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <ImageButton
+                android:id="@+id/head_girl"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="10dp"
+                android:background="#ffffff"
+                android:scaleType="fitXY"
+                android:src="@drawable/girl" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Sarah"
+                android:textColor="#F8F8FF"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/level_girl"
+                android:layout_width="27dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/level_girl" />
+
+            <TextView
+                android:id="@+id/level_content"
+                android:layout_width="26dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:textColor="#F8F8FF"
+                android:text="1" />
+            <ImageView
+                android:id="@+id/coin_boy"
+                android:layout_width="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/coin_girl"/>
+
+            <TextView
+                android:id="@+id/coin_number_girl_mask"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="23dp"
+                android:textColor="#F8F8FF"
+                android:text="890" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical"
+            android:clipChildren="false"
+            android:background="#f198c6">
+
+            <ImageButton
+                android:id="@+id/change_head_girl"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#f198c6"
+                android:scaleType="fitXY"
+                android:src="@drawable/head"
+
+                />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="John"
+                android:textColor="#F8F8FF"
+                android:textSize="15dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.cillivian.brushtee.view.girlExchangeView>
